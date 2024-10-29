@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sub_historico" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4dc5a1f9-9181-442a-89e6-5a2ffa430d84">
+	<subDataset name="Dataset1" uuid="4f57a69e-2940-4a20-a52e-978c842893e2">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="codigoEtiqueta" class="java.lang.String"/>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="label" class="java.lang.String"/>
+		<field name="dataGeracao" class="java.util.Date"/>
+		<field name="quantidade" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="lista" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="mes" class="java.lang.String"/>
+	<field name="listaDados" class="java.util.List"/>
+	<field name="totalGeral" class="java.lang.Integer"/>
+	<detail>
+		<band height="136" splitType="Stretch">
+			<componentElement>
+				<reportElement x="45" y="54" width="440" height="20" uuid="c3fbd415-116c-49e9-8015-091d9cd26cb8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="Dataset1" uuid="d8c7b2b1-1689-42f7-8ba8-6001e0f2db46">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listaDados})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="440">
+						<textField>
+							<reportElement x="40" y="0" width="100" height="20" uuid="8f3dee42-971b-46b8-9902-5351334ca38f">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							</reportElement>
+							<box>
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[" "+$F{codigoEtiqueta}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="0" width="40" height="20" uuid="c5d8e3b9-b287-4212-ad11-839617cfcf2a">
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<box>
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="140" y="0" width="100" height="20" uuid="f080c94f-d246-4a09-8aee-c15331a01a26">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							</reportElement>
+							<box>
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[" "+$F{label}]]></textFieldExpression>
+						</textField>
+						<textField pattern="dd/MM/yyyy">
+							<reportElement x="240" y="0" width="100" height="20" uuid="f407d23b-1ef1-4870-ab72-8f27f3639273">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							</reportElement>
+							<box>
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{dataGeracao}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="340" y="0" width="100" height="20" uuid="2ba8b707-44d2-4d5c-91ee-c97a6302480c">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<box>
+								<pen lineWidth="0.75"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<textField>
+				<reportElement x="215" y="0" width="100" height="30" forecolor="#0905FF" uuid="850a1008-fac7-44c1-90e4-61b698044ed9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="61636221-873b-4084-84aa-c03f094e625b"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="45" y="37" width="40" height="17" uuid="b1630b54-f990-45b8-8825-3ff80c387fc4"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="37" width="100" height="17" uuid="943ec5cb-799a-4700-bcff-d1f30d72f05e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ CÓDIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="37" width="100" height="17" uuid="b96d038f-bb03-4b2e-9d31-760a032b3d90">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ LABEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="37" width="100" height="17" uuid="5eb49cd3-bfa2-4ac7-aeeb-bc119b29b67e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ DATA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="37" width="100" height="17" uuid="819349e9-a996-4036-a95f-758ab11c6bfd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANTIDADE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="45" y="100" width="94" height="25" uuid="19717ea0-4b85-4de2-bdb2-50617915acf0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL GERAL: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="139" y="100" width="72" height="25" uuid="cb41c3df-d36b-4cca-ae9b-f4b6719421f6"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalGeral}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="historico" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="26c71989-3a8e-40a4-82bd-12f656f02eae">
+	<parameter name="lista" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="31" width="430" height="48" uuid="ab154332-9d81-47ef-b838-ac436158d375"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE GERAÇÃO DE ETIQUETAS - ÚLTIMOS 12 MESES]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="10" y="1" width="103" height="101" uuid="bb210229-cfd3-484f-82bb-03f177f3cc99"/>
+				<imageExpression><![CDATA["imagens/logo_brilho.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<subreport isUsingCache="false">
+				<reportElement x="0" y="0" width="560" height="10" uuid="6ae7de97-fc94-4133-84e5-dbd6765f5dd6"/>
+				<dataSourceExpression><![CDATA[$P{lista}]]></dataSourceExpression>
+				<subreportExpression><![CDATA["sub_historico.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>
